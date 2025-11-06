@@ -1,0 +1,16 @@
+[Unit]
+Description=Bluetooth Driver Reset (Post-Boot)
+After=network.target network-online.target bluetooth.service graphical-session.target
+
+[Service]
+# Задержка 10 секунд для стабилизации системы
+ExecStartPre=/bin/sleep 10
+
+# Запуск нашего скрипта
+ExecStart=/home/user/.local/bin/nausniki-hueta
+
+# Запуск только один раз
+Type=oneshot
+
+[Install]
+WantedBy=default.target

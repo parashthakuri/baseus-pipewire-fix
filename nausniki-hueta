@@ -1,0 +1,14 @@
+#!/bin/bash
+# Скрипт, обходящий баг прошивки дешевых Bluetooth-наушников (например, Baseus), 
+# которые рвут соединение при подключении к Linux (BlueZ).
+
+echo "--- [1/3] Выгружаю драйвер Bluetooth (btusb)..."
+sudo modprobe -r btusb
+
+echo "--- [2/3] Загружаю драйвер Bluetooth (btusb)..."
+sudo modprobe btusb
+
+echo "--- [3/3] Перезапускаю службу Bluetooth..."
+sudo systemctl restart bluetooth.service
+
+echo "--- [ГОТОВО] Bluetooth полностью перезагружен. Теперь подключите наушники через меню."
